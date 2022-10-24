@@ -1,21 +1,25 @@
 ﻿string[] array = { "hello", "2", "world", ":-)" };
 int size = array.Length;
-int number = 0;
 int sizeArrayResult = 0;
 for (int i = 0; i < size; i++)
 {
     if (array[i].Length < 4) sizeArrayResult++;
 }
 string[] arrayResult = new string[sizeArrayResult];
-for (int i = 0; i < size; i++)
+string[] ArraySorting(string[] array, string[] arrayResult,int size)
 {
-    if (array[i].Length < 4)
+    int number = 0;
+    for (int i = 0; i < size; i++)
     {
-        arrayResult[number] = array[i];
-        number++;
+        if (array[i].Length < 4)
+        {
+            arrayResult[number] = array[i];
+            number++;
+        }
     }
+    return arrayResult;
 }
-PrintArray(arrayResult);
+PrintArray(ArraySorting(array,arrayResult,size));
 void PrintArray(string[] array)
 {
     Console.Write("[");
@@ -26,4 +30,3 @@ void PrintArray(string[] array)
     }
     Console.Write("]");
 }
-
